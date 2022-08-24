@@ -1,0 +1,90 @@
+@import "../../../vendor/filament/filament/resources/css/app.css";
+
+@import "../../../node_modules/tippy.js/dist/tippy.css";
+@import "../../../node_modules/tippy.js/themes/light.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button[disabled] {
+    opacity: 0.5;
+}
+
+.filepond--root[data-style-panel-aspect-ratio] .filepond--drop-label {
+    transform: translateY(-50%) !important;
+    position: absolute;
+    top: 50%;
+}
+
+.filament-main-topbar,
+.filament-sidebar-header {
+    @apply bg-white dark:bg-gray-800;
+}
+
+@screen lg {
+    .filament-sidebar {
+        @apply bg-transparent dark:!bg-transparent shadow-none lg:!border-r-0 rtl:lg:!border-l-0;
+    }
+
+    .filament-sidebar-header {
+        @apply border-r rtl:border-l;
+    }
+}
+
+.filament-sidebar-group > button {
+    @apply outline-offset-8 rounded-sm;
+}
+
+.filament-sidebar nav li:not(.filament-sidebar-group) div {
+    border-top: none;
+}
+
+.filament-sidebar-group button p {
+    @apply text-primary-600 dark:!text-primary-500;
+}
+
+.filament-forms-section-component {
+    @apply dark:!border-gray-700;
+}
+
+.filament-forms-section-header-wrapper {
+    @apply bg-gray-50 dark:!bg-gray-900/75;
+}
+
+.filament-forms-section-content-wrapper {
+    @apply border-t dark:border-gray-700;
+}
+
+.filament-versions-nav-component {
+    @apply border-t-0;
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select,
+[type="checkbox"],
+[type="radio"],
+.filament-forms-repeater-component * {
+    @apply !shadow-none;
+}
+
+.filament-forms-section-content {
+    @apply p-4;
+}
+
+.filament-tables-icon-button-action {
+    @apply -mx-1;
+}
