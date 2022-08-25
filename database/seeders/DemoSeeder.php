@@ -19,27 +19,27 @@ class DemoSeeder extends Seeder
         $this->call(PageSeeder::class);
 
         if (class_exists('App\Models\Post')) {
-            $ths->call(PostSeeder::class);
+            $this->call(PostSeeder::class);
         }
 
         if (class_exists('App\Models\Runway')) {
-            $ths->call(RunwaySeeder::class);
+            $this->call(RunwaySeeder::class);
         }
 
         if (class_exists('App\Models\Faq')) {
-            $ths->call(FaqSeeder::class);
+            $this->call(FaqSeeder::class);
         }
 
         if (class_exists('App\Models\Sheet')) {
-            $ths->call(SheetSeeder::class);
+            $this->call(SheetSeeder::class);
         }
 
         if (class_exists('App\Models\DiscoveryTopic')) {
-            $ths->call(DiscoveryTopicSeeder::class);
+            $this->call(DiscoveryTopicSeeder::class);
         }
 
         if (class_exists('App\Models\DiscoveryArticle')) {
-            $ths->call(DiscoveryArticleSeeder::class);
+            $this->call(DiscoveryArticleSeeder::class);
         }
     }
 }
