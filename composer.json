@@ -20,6 +20,7 @@
         "awcodes/filament-addons": "^0.3.12",
         "awcodes/filament-curator": "^0.4.4",
         "awcodes/filament-quick-create": "^1.0",
+        "awcodes/filament-sticky-header": "^1.0",
         "awcodes/filament-tiptap-editor": "^0.3.12",
         "bezhansalleh/filament-shield": "^2.1",
         "filament/filament": "^2.15",
