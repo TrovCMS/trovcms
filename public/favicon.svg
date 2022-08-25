@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+    <title>Trov Fav Icon</title>
+    <g>
+        <rect fill="#0f172a" width="300" height="300"/>
+    </g>
+    <g>
+        <path fill="#0ea5e9" d="M50,107.08V57H250v50l-46.65-6.44V82.42h-30V234.3L126.67,243V82.42h-30v18.22Z" transform="translate(0 0)"/>
+    </g>
+</svg>
