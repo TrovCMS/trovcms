@@ -30,7 +30,7 @@ class MediaSeeder extends Seeder
             }
         } else {
             $faker = (new \Faker\Factory)->create();
-            $files = File::files(database_path().'/seeders/trov-seed-images/');
+            $files = File::files(database_path() . '/seeders/trov-seed-images/');
 
             if ($files) {
                 foreach ($files as $file) {
@@ -38,8 +38,8 @@ class MediaSeeder extends Seeder
 
                     Media::withoutEvents(function () use ($data, $faker) {
                         $media = Media::create([
-                            'public_id' => config('filament-curator.directory').'/'.$data->filename,
-                            'filename' => config('filament-curator.directory').'/'.$data->filename.'.'.$data->extension,
+                            'public_id' => config('filament-curator.directory') . '/' . $data->filename,
+                            'filename' => config('filament-curator.directory') . '/' . $data->filename . '.' . $data->extension,
                             'ext' => $data->extension,
                             'type' => 'image',
                             'alt' => $faker->words(rand(3, 8), true),
@@ -53,7 +53,7 @@ class MediaSeeder extends Seeder
                             'size' => $data->filesize(),
                         ]);
 
-                        Storage::disk(config('filament-curator.disk'))->put(config('filament-curator.directory').'/'.$data->filename.'.'.$data->extension, $data->encode(null, '80'));
+                        Storage::disk(config('filament-curator.disk'))->put(config('filament-curator.directory') . '/' . $data->filename . '.' . $data->extension, $data->encode(null, '80'));
                         CuratorThumbnails::generate($media);
                     });
                 }

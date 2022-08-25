@@ -98,6 +98,6 @@ class Page extends Model
             return url()->to($this->getBasePath());
         }
 
-        return url()->to($this->getBasePath().$this->slug.'/');
+        return url()->to($this->getBasePath() . $this->slug . '/');
     }
 }

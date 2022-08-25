@@ -73,7 +73,7 @@ class User extends Authenticatable
 
     public function getAvatarUrlAttribute()
     {
-        return $this->avatar ? $this->avatar : 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=FFFFFF&background=111827';
+        return $this->avatar ? $this->avatar : 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=FFFFFF&background=111827';
     }
 
     public function getSlugOptions(): SlugOptions

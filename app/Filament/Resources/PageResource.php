@@ -12,6 +12,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
+use Filament\Resources\Pages\EditRecord;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
@@ -56,7 +57,7 @@ class PageResource extends Resource
             TitleWithSlug::make('title', 'slug', '/')->columnSpan('full'),
             Section::make('Details')
                 ->collapsible()
-                ->collapsed('edit')
+                ->collapsed(fn ($livewire) => $livewire instanceof EditRecord)
                 ->columns(['md' => 2])
                 ->schema([
                     Group::make([
@@ -85,9 +86,9 @@ class PageResource extends Resource
                     ]),
                 ]),
             Meta::make()
-                ->collapsed('edit'),
+                ->collapsed(fn ($livewire) => $livewire instanceof EditRecord),
             Hero::make('hero')
-                ->collapsed('edit')
+                ->collapsed(fn ($livewire) => $livewire instanceof EditRecord)
                 ->collapsible(),
             Section::make('Page Content')
                 ->collapsible()
