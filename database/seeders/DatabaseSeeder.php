@@ -24,9 +24,5 @@ class DatabaseSeeder extends Seeder
 
         $admin->givePermissionTo(Permission::where('name', 'not like', '%_role')->get());
         $editor->givePermissionTo(Permission::where('name', 'not like', '%_role')->where('name', 'not like', '%_user')->get());
-
-        $this->call(UserSeeder::class);
-        $this->call(MediaSeeder::class);
-        $this->call(PageSeeder::class);
     }
 }
