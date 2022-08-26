@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Filament\Facades\Filament;
 use Illuminate\Support\ServiceProvider;
+use pxlrbt\FilamentEnvironmentIndicator\FilamentEnvironmentIndicator;
 
 class FilamentServiceProvider extends ServiceProvider
 {
@@ -36,5 +37,11 @@ class FilamentServiceProvider extends ServiceProvider
                 'Filament Shield',
             ]);
         });
+
+        FilamentEnvironmentIndicator::configureUsing(function (FilamentEnvironmentIndicator $indicator) {
+            $indicator->showBadge = fn () => true;
+            $indicator->showBorder = fn () => false;
+            $indicator->visible = fn () => true;
+        }, isImportant: true);
     }
 }
