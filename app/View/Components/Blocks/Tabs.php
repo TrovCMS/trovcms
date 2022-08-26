@@ -1,12 +1,14 @@
 <?php
 
-namespace App\View\Blocks;
+namespace App\View\Components\Blocks;
 
 use Illuminate\View\Component;
 
-class RichText extends Component
+class Tabs extends Component
 {
-    public $content;
+    public $tabs = [];
+
+    public $panels = [];
 
     /**
      * Create a new component instance.
@@ -15,7 +17,12 @@ class RichText extends Component
      */
     public function __construct(array $data)
     {
-        $this->content = nl2br($data['content']);
+        if ($data['items']) {
+            foreach ($data['items'] as $tab) {
+                $this->tabs[] = $tab['title'];
+                $this->panels[] = $tab['content'];
+            }
+        }
     }
 
     /**
@@ -25,6 +32,6 @@ class RichText extends Component
      */
     public function render()
     {
-        return view('trov::components.blocks.rich-text');
+        return view('trov::components.blocks.tabs');
     }
 }

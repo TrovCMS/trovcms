@@ -52,7 +52,7 @@ class PageFactory extends Factory
                     'type' => 'image',
                     'image' => Media::inRandomOrder()->limit(1)->first()->id,
                     'oembed' => null,
-                    'cta' => $this->faker->words(rand(3, 8), true),
+                    'cta' => Str::ucfirst($this->faker->words(rand(3, 8), true)),
                 ],
             ];
         });
@@ -106,7 +106,7 @@ class PageFactory extends Factory
                         [
                             'type' => 'rich-text',
                             'data' => [
-                                'content' => '<h1>' . Str::title($this->faker->words(rand(3, 8), true)) . '</h1><p>' . collect($this->faker->paragraphs(rand(1, 6)))->implode('</p><p>') . '</p><h2>' . Str::title($this->faker->words(rand(3, 8), true)) . '</h2><p>' . collect($this->faker->paragraphs(rand(1, 6)))->implode('</p><p>') . '</p>',
+                                'content' => '<h1>' . Str::ucfirst($this->faker->words(rand(3, 8), true)) . '</h1><p>' . collect($this->faker->paragraphs(rand(1, 6)))->implode('</p><p>') . '</p><h2>' . Str::ucfirst($this->faker->words(rand(3, 8), true)) . '</h2><p>' . collect($this->faker->paragraphs(rand(1, 6)))->implode('</p><p>') . '</p>',
                             ],
                         ],
                     ],

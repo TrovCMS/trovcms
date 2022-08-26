@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 85.87" class="text-primary-500 h-8 w-auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 85.87" @class([
+    "text-primary-500",
+    "h-8 w-auto" => ! $attributes->has('class')
+])>
     <title>Trov Logo</title>
     <g>
         <path d="M92.37 23.11V0H0v23.11l21.55-2.97v-8.42h13.86v74.15l21.55-4V11.72h13.86v8.42l21.55 2.97z" fill="currentColor"/>

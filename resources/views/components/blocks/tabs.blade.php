@@ -1,4 +1,4 @@
-<div class="mt-8 render-block render-block__tabs"
+<div class="render-block render-block__tabs"
     x-data="{
         selectedId: null,
         init() {
@@ -52,7 +52,7 @@
                 role="tabpanel"
                 class="p-8">
                 @foreach ($panel as $block)
-                    <x-dynamic-component :component="'trov::components.blocks.' . $block['type']"
+                    <x-dynamic-component :component="'components.blocks.' . $block['type']"
                         :data="$block['data']" />
                 @endforeach
             </section>

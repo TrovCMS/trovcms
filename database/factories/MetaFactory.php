@@ -24,7 +24,7 @@ class MetaFactory extends Factory
     public function definition()
     {
         return [
-            'title' => Str::title($this->faker->words(rand(2, 6), true)),
+            'title' => Str::ucfirst($this->faker->words(rand(2, 6), true)),
             'description' => $this->faker->text,
             'indexable' => $this->faker->boolean,
             'og_image' => Media::inRandomOrder()->limit(1)->first()->id,

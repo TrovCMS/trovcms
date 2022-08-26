@@ -1,5 +1,7 @@
 import Alpine from "alpinejs";
 import axios from "axios";
+import Focus from "@alpinejs/focus";
+import AlpineFloatingUi from "@awcodes/alpine-floating-ui";
 // import Echo from 'laravel-echo';
 // import Pusher from 'pusher-js';
 
@@ -29,5 +31,8 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+Alpine.plugin(Focus);
+Alpine.plugin(AlpineFloatingUi);
 
 Alpine.start();

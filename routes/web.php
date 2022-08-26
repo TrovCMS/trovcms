@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Trov\Http\Controllers\SitemapController;
 
@@ -14,9 +15,12 @@ use Trov\Http\Controllers\SitemapController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 Route::get('/sitemap', [SitemapController::class, 'pretty']);
+
+Route::middleware('force_trailing_slash')->group(function () {
+    Route::name('welcome')->get('/', [PageController::class, 'index']);
+
+    // this needs to be last !!!!!!!!!!!!!!
+    Route::name('pages.show')->get('/{page:slug}', [PageController::class, 'show']);
+});
