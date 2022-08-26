@@ -35,7 +35,7 @@
         "spatie/laravel-ray": "^1.30",
         "spatie/laravel-sluggable": "^3.4",
         "spatie/laravel-tags": "^4.3",
-        "trovcms/core": "dev-main"
+        "trovcms/core": "^0.1.0@beta"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -88,11 +88,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "path",
-            "url": "~/Sites/packages/trov/core"
-        }
-    ]
+    "prefer-stable": true
 }

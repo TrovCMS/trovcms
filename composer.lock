@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0397d0a4184f8ea1810e1f977b28818",
+    "content-hash": "474742a43661b23c6a6543164887b0ab",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -8080,11 +8080,17 @@
         },
         {
             "name": "trovcms/core",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "/Users/adam.weston/Sites/packages/trov/core",
+            "version": "v0.1.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TrovCMS/core.git",
                 "reference": "345771085d52247770d6b2cc15fc9060b12ba73a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TrovCMS/core/zipball/345771085d52247770d6b2cc15fc9060b12ba73a",
+                "reference": "345771085d52247770d6b2cc15fc9060b12ba73a",
+                "shasum": ""
             },
             "require": {
                 "php": "^8.0",
@@ -8103,6 +8109,7 @@
                     "Trov\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8112,9 +8119,7 @@
                 "issues": "https://github.com/trovcms/core/issues",
                 "source": "https://github.com/trovcms/core"
             },
-            "transport-options": {
-                "relative": false
-            }
+            "time": "2022-08-26T18:19:16+00:00"
         },
         {
             "name": "ua-parser/uap-php",
@@ -11030,7 +11035,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "trovcms/core": 20
+        "trovcms/core": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
