@@ -31,6 +31,8 @@ class FilamentServiceProvider extends ServiceProvider
 
             Filament::registerNavigationGroups([
                 'Site',
+                'Discovery Center',
+                'Airport',
                 'Filament Shield',
             ]);
         });
