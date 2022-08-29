@@ -38,7 +38,7 @@ After adding the module you will need to run the migrations and generate the pol
 
 ```bash
 php artisan:migrate
-php shield:generate
+php artisan shield:generate
 ```
 
 ## License
