@@ -30,6 +30,10 @@ button[disabled] {
     .filament-sidebar-header {
         @apply border-r rtl:border-l;
     }
+
+    .filament-sidebar-open-button {
+        z-index: 100 !important;
+    }
 }
 
 .filament-sidebar-group > button {

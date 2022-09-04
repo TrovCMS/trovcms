@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Page;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PagePolicy
@@ -24,9 +25,10 @@ class PagePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user)
+    public function view(User $user, Page $page)
     {
         return $user->can('view_page');
     }
@@ -35,6 +37,7 @@ class PagePolicy
      * Determine whether the user can create models.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
     public function create(User $user)
@@ -46,9 +49,10 @@ class PagePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user)
+    public function update(User $user, Page $page)
     {
         return $user->can('update_page');
     }
@@ -57,9 +61,10 @@ class PagePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user)
+    public function delete(User $user, Page $page)
     {
         return $user->can('delete_page');
     }
@@ -79,9 +84,10 @@ class PagePolicy
      * Determine whether the user can permanently delete.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user)
+    public function forceDelete(User $user, Page $page)
     {
         return $user->can('force_delete_page');
     }
@@ -101,9 +107,10 @@ class PagePolicy
      * Determine whether the user can restore.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user)
+    public function restore(User $user, Page $page)
     {
         return $user->can('restore_page');
     }
@@ -123,9 +130,10 @@ class PagePolicy
      * Determine whether the user can bulk restore.
      *
      * @param  \App\Models\User  $user
+     * @param  \App\Models\Page  $page
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function replicate(User $user)
+    public function replicate(User $user, Page $page)
     {
         return $user->can('replicate_page');
     }
@@ -140,4 +148,5 @@ class PagePolicy
     {
         return $user->can('reorder_page');
     }
+
 }
