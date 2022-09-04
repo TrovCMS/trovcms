@@ -86,7 +86,8 @@ class PageResource extends Resource
                     ]),
                 ]),
             Meta::make()
-                ->collapsed(fn ($livewire) => $livewire instanceof EditRecord),
+                ->collapsed(fn ($livewire) => $livewire instanceof EditRecord)
+                ->collapsible(),
             Hero::make('hero')
                 ->collapsed(fn ($livewire) => $livewire instanceof EditRecord)
                 ->collapsible(),

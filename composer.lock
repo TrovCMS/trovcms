@@ -133,16 +133,16 @@
         },
         {
             "name": "awcodes/filament-curator",
-            "version": "v0.4.5",
+            "version": "v0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awcodes/filament-curator.git",
-                "reference": "666892a6cbf4b8af81038b5c3422c6ad70af6d2d"
+                "reference": "1fb73e36a354f7647564f3715196b45eb3bc11d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awcodes/filament-curator/zipball/666892a6cbf4b8af81038b5c3422c6ad70af6d2d",
-                "reference": "666892a6cbf4b8af81038b5c3422c6ad70af6d2d",
+                "url": "https://api.github.com/repos/awcodes/filament-curator/zipball/1fb73e36a354f7647564f3715196b45eb3bc11d4",
+                "reference": "1fb73e36a354f7647564f3715196b45eb3bc11d4",
                 "shasum": ""
             },
             "require": {
@@ -183,9 +183,9 @@
             ],
             "support": {
                 "issues": "https://github.com/awcodes/filament-curator/issues",
-                "source": "https://github.com/awcodes/filament-curator/tree/v0.4.5"
+                "source": "https://github.com/awcodes/filament-curator/tree/v0.4.6"
             },
-            "time": "2022-08-24T15:47:31+00:00"
+            "time": "2022-09-04T22:34:17+00:00"
         },
         {
             "name": "awcodes/filament-quick-create",
@@ -303,16 +303,16 @@
         },
         {
             "name": "awcodes/filament-tiptap-editor",
-            "version": "v0.3.13",
+            "version": "v0.3.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/awcodes/filament-tiptap-editor.git",
-                "reference": "791762fe4ab2306ba03543f24e02add792dfd7dd"
+                "reference": "f5c426e7a0cf737d1b56dfde829c1a19016568fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awcodes/filament-tiptap-editor/zipball/791762fe4ab2306ba03543f24e02add792dfd7dd",
-                "reference": "791762fe4ab2306ba03543f24e02add792dfd7dd",
+                "url": "https://api.github.com/repos/awcodes/filament-tiptap-editor/zipball/f5c426e7a0cf737d1b56dfde829c1a19016568fd",
+                "reference": "f5c426e7a0cf737d1b56dfde829c1a19016568fd",
                 "shasum": ""
             },
             "require": {
@@ -354,9 +354,9 @@
             ],
             "support": {
                 "issues": "https://github.com/awcodes/filament-tiptap-editor/issues",
-                "source": "https://github.com/awcodes/filament-tiptap-editor/tree/v0.3.13"
+                "source": "https://github.com/awcodes/filament-tiptap-editor/tree/v0.3.14"
             },
-            "time": "2022-08-24T16:05:34+00:00"
+            "time": "2022-09-04T22:34:10+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
