@@ -33,6 +33,10 @@
     }
 }
 
+#site-main > #site-main-content:first-child {
+    margin-block-start: theme("margin.16");
+}
+
 ul.checked-list {
     list-style-type: none;
     margin-inline-start: 0;

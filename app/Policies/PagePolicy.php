@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Page;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PagePolicy
@@ -148,5 +148,4 @@ class PagePolicy
     {
         return $user->can('reorder_page');
     }
-
 }

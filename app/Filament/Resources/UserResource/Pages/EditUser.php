@@ -17,10 +17,11 @@ class EditUser extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
-        $nonPermissionsFilter = ['name','slug','email','password','bio','facebook_handle','twitter_handle','instagram_handle','linkedin_handle','youtube_handle','pinterest_handle'];
+        $nonPermissionsFilter = ['name', 'slug', 'email', 'password', 'bio', 'facebook_handle', 'twitter_handle', 'instagram_handle', 'linkedin_handle', 'youtube_handle', 'pinterest_handle'];
 
         $this->permissions = collect($data)->filter(function ($permission, $key) use ($nonPermissionsFilter) {
             ray($key);
+
             return ! in_array($key, $nonPermissionsFilter) && Str::contains($key, '_');
         })->keys();
 

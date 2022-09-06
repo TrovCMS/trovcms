@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\TrovRouteServiceProvider::class,
 
         /*
          * Application Service Providers...

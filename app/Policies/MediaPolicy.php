@@ -148,5 +148,4 @@ class MediaPolicy
     {
         return $user->can('reorder_media');
     }
-
 }

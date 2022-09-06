@@ -2,29 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use Closure;
-use Filament\Forms;
-use App\Models\User;
-use Filament\Tables;
-use Illuminate\Support\Str;
-use Filament\Resources\Form;
-use Filament\Resources\Table;
-use Filament\Resources\Resource;
-use Filament\Forms\Components\Grid;
-use Illuminate\Support\Facades\Hash;
-use FilamentTiptapEditor\TiptapEditor;
-use Spatie\Permission\Models\Permission;
-use Illuminate\Database\Eloquent\Builder;
-use FilamentAddons\Forms\Fields\PasswordGenerator;
+use App\Filament\Resources\UserResource\Pages\CreateUser;
 use App\Filament\Resources\UserResource\Pages\EditUser;
+use App\Filament\Resources\UserResource\Pages\ListUsers;
+use App\Models\User;
 use BezhanSalleh\FilamentShield\FilamentShield;
 use BezhanSalleh\FilamentShield\Support\Utils;
-use App\Filament\Resources\UserResource\Pages\ListUsers;
-use App\Filament\Resources\UserResource\Pages\CreateUser;
+use Closure;
+use Filament\Forms;
+use Filament\Resources\Form;
+use Filament\Resources\Resource;
+use Filament\Resources\Table;
+use Filament\Tables;
+use FilamentAddons\Forms\Fields\PasswordGenerator;
+use FilamentTiptapEditor\TiptapEditor;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Spatie\Permission\Models\Permission;
 
 class UserResource extends Resource
 {
@@ -188,7 +186,7 @@ class UserResource extends Resource
                             ->reactive()
                             ->afterStateUpdated(function (Closure $set, Closure $get, $state) use ($entity) {
                                 collect(Utils::getGeneralResourcePermissionPrefixes())->each(function ($permission) use ($set, $entity, $state) {
-                                    $set($permission.'_'.$entity['resource'], $state);
+                                    $set($permission . '_' . $entity['resource'], $state);
                                 });
 
                                 if (! $state) {
@@ -220,7 +218,7 @@ class UserResource extends Resource
     public static function getResourceEntityPermissionsSchema($entity): ?array
     {
         return collect(Utils::getGeneralResourcePermissionPrefixes())->reduce(function ($permissions /** @phpstan ignore-line */, $permission) use ($entity) {
-            $permissions[] = Forms\Components\Checkbox::make($permission.'_'.$entity['resource'])
+            $permissions[] = Forms\Components\Checkbox::make($permission . '_' . $entity['resource'])
                 ->label(FilamentShield::getLocalizedResourcePermissionLabel($permission))
                 ->extraAttributes(['class' => 'text-primary-600'])
                 ->afterStateHydrated(function (Closure $set, Closure $get, $record) use ($entity, $permission) {
@@ -228,7 +226,7 @@ class UserResource extends Resource
                         return;
                     }
 
-                    $set($permission.'_'.$entity['resource'], $record->checkPermissionTo($permission.'_'.$entity['resource']));
+                    $set($permission . '_' . $entity['resource'], $record->checkPermissionTo($permission . '_' . $entity['resource']));
 
                     static::refreshResourceEntityStateAfterHydrated($record, $set, $entity['resource']);
 
@@ -280,7 +278,7 @@ class UserResource extends Resource
         collect(FilamentShield::getResources())->each(function ($entity) use ($set, $state) {
             $set($entity['resource'], $state);
             collect(Utils::getGeneralResourcePermissionPrefixes())->each(function ($permission) use ($entity, $set, $state) {
-                $set($permission.'_'.$entity['resource'], $state);
+                $set($permission . '_' . $entity['resource'], $state);
             });
         });
 
@@ -307,7 +305,7 @@ class UserResource extends Resource
     {
         $permissionStates = collect(Utils::getGeneralResourcePermissionPrefixes())
             ->map(function ($permission) use ($get, $entity) {
-                return (bool) $get($permission.'_'.$entity);
+                return (bool) $get($permission . '_' . $entity);
             });
 
         if ($permissionStates->containsStrict(false) === false) {
@@ -342,8 +340,6 @@ class UserResource extends Resource
 
                 return $counts;
             }, []);
-
-
 
         // set entity's state if one are all permissions are true
         if (Arr::exists($entities, $entity) && Arr::get($entities, $entity)) {
@@ -437,7 +433,7 @@ class UserResource extends Resource
         $resourcePermissions = collect();
         collect(FilamentShield::getResources())->each(function ($entity) use ($resourcePermissions) {
             collect(Utils::getGeneralResourcePermissionPrefixes())->map(function ($permission) use ($resourcePermissions, $entity) {
-                $resourcePermissions->push((string) Str::of($permission.'_'.$entity['resource']));
+                $resourcePermissions->push((string) Str::of($permission . '_' . $entity['resource']));
             });
         });
 
