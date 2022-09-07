@@ -37,6 +37,16 @@
     margin-block-start: theme("margin.16");
 }
 
+ul[role="list"] {
+    list-style-type: none;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+}
+
+ul[role="list"] > li {
+    padding-inline-start: 0;
+}
+
 ul.checked-list {
     list-style-type: none;
     margin-inline-start: 0;
