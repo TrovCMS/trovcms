@@ -87,11 +87,6 @@ class Page extends Model
         return $query->where('front_page', true)->first();
     }
 
-    public function getBasePath()
-    {
-        return '/';
-    }
-
     public function getPublicUrl()
     {
         return $this->front_page ? route('welcome') : route('pages.show', $this);
