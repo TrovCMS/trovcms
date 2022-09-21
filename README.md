@@ -7,7 +7,7 @@
 ### Step 1
 Install with composer.
 ```bash
-composer create-project trovcms/trov <my-cool-trov-app>
+composer create-project trovcms/trovcms <my-cool-trov-app>
 ```
 
 ### Step 2
